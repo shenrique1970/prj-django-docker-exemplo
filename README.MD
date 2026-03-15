@@ -57,13 +57,13 @@ RUN apk add --update --no-cache postgresql-client && \
     apk del .tmp-build-deps && \
     adduser -D -H django-user
 
-``` 
-
-
 # Garante que o ambiente virtual seja usado por padrão
 ENV PATH="/uv/bin:$PATH"
-
 USER django-user
+
+```
+
+
 ⚙️ docker-compose.yml
 yaml
 
