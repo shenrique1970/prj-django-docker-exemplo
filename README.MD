@@ -153,21 +153,24 @@ http://127.0.0.1:8000
 <code>
 docker compose run  app sh -c "python manage.py createsuperuser"
 </code>
-
-### pgadmin https://www.pgadmin.org/download/pgadmin-4-apt/
-
-
-### http://127.0.0.1/pgadmin4/browser/
+``` 
+### pgadmin 
+https://www.pgadmin.org/download/pgadmin-4-apt/
 
 
-### docker compose up
+### 
+http://127.0.0.1/pgadmin4/browser/
+
+
+### 
+docker compose up
 
 
 ### apps
 <code>
 docker compose run  app sh -c "python manage.py startapp contato"
 </code>
-
+``` 
 
 
 
