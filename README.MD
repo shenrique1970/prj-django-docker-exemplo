@@ -7,10 +7,12 @@ Este é um teste usando **Python**, **PostgreSQL** e **Docker**.
 
 ## 📋 Requisitos
 
-Dentro do Arquivo `requirements.txt` com ``` pip freeze > requirements.txt ```:
+Dentro do Arquivo requirements.txt com ``` pip freeze > requirements.txt ```:
 
 Django>=3.2.4,<3.3
+
 psycopg2>=2.8.0,<2.9
+
 Pillow>=8.0.0,<9.0
 
 ---
