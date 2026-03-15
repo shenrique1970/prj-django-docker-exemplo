@@ -107,20 +107,38 @@ volumes:
 ```
 
 🚀 Comandos principais
+
 Buildar containers
-bash
+```
 docker-compose build
+```
+
 Subir containers
-bash
+
+``` 
 docker-compose up --build --force-recreate
+``` 
+
+
 Criar projeto Django
-bash
+
+``` 
 docker compose run --rm app sh -c "django-admin startproject app ."
+
+```
+
 Criar app dentro do projeto
-bash
+
+```
+
 docker compose run app sh -c "python manage.py startapp contato"
+``` 
+
 ⚙️ Configuração do banco (settings.py)
 python
+
+```
+
 import os
 
 DATABASES = {
@@ -140,11 +158,16 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+``` 
+
 🌐 Acessos
 Django: http://127.0.0.1:8000
 
 PgAdmin: http://127.0.0.1/pgadmin4/browser/
 
 👤 Criar superusuário
-bash
+``` 
 docker compose run app sh -c "python manage.py createsuperuser"
+```
+
