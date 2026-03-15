@@ -10,10 +10,14 @@ Este é um teste usando **Python**, **PostgreSQL** e **Docker**.
 - psycopg2 >= 2.8.0,<2.9  
 
 Arquivo `requirements.txt`:
-```text
+
 Django>=3.2.4,<3.3
 psycopg2>=2.8.0,<2.9
+
+---
+
 🗂 Estrutura
+
 .dockerignore
 
 .gitignore
