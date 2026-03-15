@@ -26,6 +26,9 @@ Pasta app/
 
 🐳 Dockerfile
 dockerfile
+
+<code>
+
 FROM python:3.9-alpine3.13
 
 # Instala o uv
@@ -49,6 +52,8 @@ RUN apk add --update --no-cache postgresql-client && \
     rm -rf /tmp && \
     apk del .tmp-build-deps && \
     adduser -D -H django-user
+
+</code>
 
 # Garante que o ambiente virtual seja usado por padrão
 ENV PATH="/uv/bin:$PATH"
