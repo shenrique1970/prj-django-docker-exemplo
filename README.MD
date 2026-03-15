@@ -31,7 +31,7 @@ Pasta app/
 🐳 Dockerfile
 dockerfile
 
-<code>
+```
 
 FROM python:3.9-alpine3.13
 
@@ -57,7 +57,8 @@ RUN apk add --update --no-cache postgresql-client && \
     apk del .tmp-build-deps && \
     adduser -D -H django-user
 
-</code>
+``` 
+
 
 # Garante que o ambiente virtual seja usado por padrão
 ENV PATH="/uv/bin:$PATH"
@@ -65,6 +66,8 @@ ENV PATH="/uv/bin:$PATH"
 USER django-user
 ⚙️ docker-compose.yml
 yaml
+
+```
 version: '3.0'
 
 services:
@@ -100,6 +103,9 @@ services:
 
 volumes:
   db_python:
+
+```
+
 🚀 Comandos principais
 Buildar containers
 bash
