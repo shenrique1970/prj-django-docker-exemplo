@@ -1,3 +1,4 @@
+markdown
 # Blog - Django + PostgreSQL + Docker
 
 Este é um teste usando **Python**, **PostgreSQL** e **Docker**.
@@ -8,6 +9,10 @@ Este é um teste usando **Python**, **PostgreSQL** e **Docker**.
 - Django >= 3.2.4,<3.3  
 - psycopg2 >= 2.8.0,<2.9  
 
+Arquivo `requirements.txt`:
+```text
+Django>=3.2.4,<3.3
+psycopg2>=2.8.0,<2.9
 🗂 Estrutura
 .dockerignore
 
@@ -19,12 +24,9 @@ docker-compose.yml
 
 Pasta app/
 
-### criar arquivo Dockerfile
-
-### arquivo Dockerfile 
-<code>
-
-    FROM python:3.9-alpine3.13
+🐳 Dockerfile
+dockerfile
+FROM python:3.9-alpine3.13
 
 # Instala o uv
 RUN apk add --no-cache curl && \
@@ -52,15 +54,9 @@ RUN apk add --update --no-cache postgresql-client && \
 ENV PATH="/uv/bin:$PATH"
 
 USER django-user
-
-
-</code>
-
-### criar arquivo docker-compose.yml
-
-<code>
-
-    version: '3.0'
+⚙️ docker-compose.yml
+yaml
+version: '3.0'
 
 services:
   db:
@@ -95,34 +91,21 @@ services:
 
 volumes:
   db_python:
-
-
-</code>
-
-### buildar 
-<code>
-
+🚀 Comandos principais
+Buildar containers
+bash
 docker-compose build
-
-</code>
-
-###
-<code>
-
+Subir containers
+bash
 docker-compose up --build --force-recreate
-
-</code>
-
-### cria projeto app/ dentro da pasta app
-<code>
-
+Criar projeto Django
+bash
 docker compose run --rm app sh -c "django-admin startproject app ."
-
-</code>
-
+Criar app dentro do projeto
+bash
+docker compose run app sh -c "python manage.py startapp contato"
 ⚙️ Configuração do banco (settings.py)
 python
-```
 import os
 
 DATABASES = {
@@ -142,41 +125,11 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+🌐 Acessos
+Django: http://127.0.0.1:8000
 
-```
-
-
-### iniciar servidor
-<code>
-docker compose up
-</code>
-
-### django
-http://127.0.0.1:8000
+PgAdmin: http://127.0.0.1/pgadmin4/browser/
 
 👤 Criar superusuário
 bash
 docker compose run app sh -c "python manage.py createsuperuser"
-``` 
-### pgadmin 
-https://www.pgadmin.org/download/pgadmin-4-apt/
-
-
-### 
-http://127.0.0.1/pgadmin4/browser/
-
-
-### 
-docker compose up
-
-
-### apps
-<code>
-docker compose run  app sh -c "python manage.py startapp contato"
-</code>
-``` 
-
-
-
-
-
